@@ -8,7 +8,7 @@ const PostItem = ( post, i ) => {
 
   return (
     <tr className="post" key={ i }>
-      <td><Link to={ '/comments/' + id }>{ id }</Link></td>
+      <td><Link to={ '/comments/' + id } title="Show Comments">{ id }</Link></td>
       <td>{ title }</td>
       <td>{ body }</td>
     </tr>
@@ -37,7 +37,7 @@ export default class Posts extends React.Component {
     const { match: { params: { userId } }, posts } = this.props
 
     return ( <div className="posts">
-      <h1>{ `Posts For User ID ${userId}` }</h1>
+      <h1>Posts For <Link to="/">{ `User ID ${userId}` }</Link></h1>
       <table className="posts__table">
         <thead>
           <tr>

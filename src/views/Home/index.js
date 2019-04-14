@@ -35,7 +35,7 @@ export default class Home extends React.Component {
           </select>
         </div>
         <div className="home__link">
-          <Link to={ `/posts/${userId}` }>{ `Get Posts For User ID ${userId}.` }</Link>
+          <Link to={ `/posts/${userId}` }>{ `Show Posts For User ID ${userId}.` }</Link>
         </div>
       </div>
     )

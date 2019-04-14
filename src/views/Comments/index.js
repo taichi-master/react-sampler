@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
 
 import { getCommentsByPost } from 'models/actions'
+import { validateComments } from 'models/rules'
 
 const CommentItem = ( comment, i ) => {
   const { id, name, email, body } = comment
@@ -17,6 +18,25 @@ const CommentItem = ( comment, i ) => {
   )
 }
 
+const CommentTable = ( { comments } ) => (
+  <table className="comments__table">
+    <thead>
+      <tr>
+        <th className="id">COMMENT ID</th>
+        <th className="name">NAME</th>
+        <th className="email">EMAIL</th>
+        <th className="body">BODY</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {
+        comments.map( CommentItem )
+      }
+    </tbody>
+  </table>
+)
+    
 @connect(
   ( { comments: { isFetching, didInvalidate, postId, data: comments }, userId } ) => ( {
     isFetching,
@@ -37,27 +57,22 @@ export default class Posts extends React.Component {
   }
 
   render () {
-    const { match: { params: { postId } }, comments, userId } = this.props
+    const { match: { params: { postId } }, comments, isFetching, userId } = this.props
 
     return (
       <div className="comments">
         <h1>Comments For <Link to={ `/posts/${userId}` }>{ `Post ID ${postId}` }</Link></h1>
-        <table className="comments__table">
-          <thead>
-            <tr>
-              <th className="id">COMMENT ID</th>
-              <th className="name">NAME</th>
-              <th className="email">EMAIL</th>
-              <th className="body">BODY</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {
-              comments.map( CommentItem )
-            }
-          </tbody>
-        </table>
+        {
+          isFetching ?
+            <h1>Loading...</h1>
+            : 
+            (
+              validateComments( comments ) ?
+                <CommentTable comments={ comments } />
+                :
+                <h1 className="error">Comments are not allowed to display.</h1>
+            )
+        }
       </div>
     )
   }

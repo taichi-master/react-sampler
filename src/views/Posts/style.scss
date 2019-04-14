@@ -3,6 +3,10 @@
     margin-bottom: 1em;
   }
 
+  a {
+    text-decoration: underline
+  }
+
   &__table {
     th, td {
       padding: .5em 1em;
