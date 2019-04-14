@@ -1,14 +1,10 @@
 #root {
   margin: 1em auto;
+  padding: 1em;
   width: $mobile-width;
+  background: lightgrey;
 
   @include atMedium {
     width: $desktop-width;
   }
-
-  .counter {
-    margin: 1em auto;
-  }
-
-  text-align: center;
 }

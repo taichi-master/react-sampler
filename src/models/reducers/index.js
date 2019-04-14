@@ -2,10 +2,10 @@ import { combineReducers } from 'redux'
 
 import comments from './comments'
 import posts from './posts'
-import year from './year'
+import userId from './userId'
 
 export default combineReducers( {
   comments,
   posts,
-  year
+  userId
 } )

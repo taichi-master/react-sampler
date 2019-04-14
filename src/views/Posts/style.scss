@@ -1,0 +1,14 @@
+.posts {
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  &__table {
+    th, td {
+      padding: .5em 1em;
+    }
+    th.id {
+      width: 7em;
+    }
+  }
+}

@@ -1,54 +1,42 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import List from 'components/list'
-import Item from 'components/item'
-import Counter from 'components/counter'
-import _ from 'lodash'
+import { Link } from "react-router-dom"
 
-import { getPostsByUser, getCommentsByPost } from 'models/actions'
+import { setUserId } from 'models/actions'
 
-const pkg = require( "package.json" )
-
-// console.log( 'load Home' )
+const userIds = [ ...Array( 10 ) ].map( ( x, i ) => i + 1 )
 
 @connect(
-  ( { year } ) => ( {
-    year
+  ( { userId } ) => ( {
+    userId
   } ),
-  { getPostsByUser, getCommentsByPost }
+  { setUserId }
 )
 export default class Home extends React.Component {
 
-  state = {
-    year: this.props.year
+  onUserIdChange = ( event ) => {
+    const userId = event.target.value
+
+    this.props.setUserId( userId )
   }
 
-  // componentDidMount () {
-  //   const userId = 1,
-  //         postId = 1
-
-  //   this.props.getPostsByUser( userId )
-  //   this.props.getCommentsByPost( postId )
-  // }
-
   render () {
-    const { year } = this.props,
-          { year: defaultYear } = this.state
+    const { userId } = this.props
 
     return (
       <div className="home">
         <h1>Home</h1>
-
-        <h1 className="project">{ pkg.name }</h1>
-
-        <Counter style={ { margin: "1em 0" } } />
-        <List title={ `Selected Year ${year}` }>
-          {
-            _.range( defaultYear, defaultYear - 5 ).map( ( x, i ) => <Item key={ i }>{ x }</Item> )
-          }
-        </List>
-
+        <div className="user-select">
+          <span>User ID</span>
+          <select value={ userId } onChange={ this.onUserIdChange }>
+            {
+              userIds.map( ( id, i ) => <option value={ id } key={ i }>{ id }</option> )
+            }
+          </select>
+        </div>
+        <div className="home__link">
+          <Link to={ `/posts/${userId}` }>{ `Get Posts For User ID ${userId}.` }</Link>
+        </div>
       </div>
     )
   }

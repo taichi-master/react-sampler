@@ -1,7 +1,7 @@
 {
-  "name": "react-starter",
-  "version": "4.0.1",
-  "description": "React Boilerplate",
+  "name": "react-sampler",
+  "version": "1.0.0",
+  "description": "React Sampler",
   "main": "index.js",
   "cfg": {
     "name": "React",
@@ -9,36 +9,10 @@
       {
         "name": "Home",
         "url": "/"
-      },
-      {
-        "name": "About",
-        "url": "/about"
-      }
-    ],
-    "footLinks": [
-      {
-        "name": "mApp v4.0.1",
-        "url": "/about"
-      },
-      {
-        "name": "Disclaimer",
-        "url": "/disclaimer"
-      },
-      {
-        "name": "Support",
-        "url": "/support"
-      },
-      {
-        "name": "Feedback",
-        "url": "/feedback"
-      },
-      {
-        "name": "Contact us",
-        "url": "/contact"
       }
     ],
     "initialState": {
-      "year": 2019
+      "userId": 1
     }
   },
   "scripts": {
@@ -51,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gogs:sing/taxtee3.git"
+    "url": "https://github.com/taichi-master/react-sampler.git"
   },
   "keywords": [
     "isomorphic",

@@ -1,4 +1,4 @@
-export const SET_YEAR = Symbol( 'SET_YEAR' )
+export const SET_USERID = Symbol( 'SET_USERID' )
 
 export const GET_POSTS_BY_USER = Symbol( 'GET_POSTS_BY_USER' )
 export const GET_POSTS_SUCCESS = Symbol( 'GET_POSTS_SUCCESS' )

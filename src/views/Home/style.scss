@@ -1,0 +1,22 @@
+.home {
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  .user-select {
+    > span {
+      padding-right: .5em;
+    }
+
+    > select {
+      font-size: 1.25em;
+    }
+
+    margin-bottom: 1em;
+  }
+
+  &__link {
+    font-size: 1.25em;
+    text-decoration: underline;
+  }
+}
