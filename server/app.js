@@ -59,7 +59,7 @@ function setRoutes ( app ) {
   app.use( compression() )
   app.use( favicon( path.resolve( __dirname, '../assets', 'favicon.ico' ) ) )
   app.use( '/', express.static( path.resolve( __dirname, '../assets' ) ) )
-  app.use( '/', express.static( path.resolve( __dirname, '../docs' ) ) )
+  app.use( '/', express.static( path.resolve( __dirname, '../dist' ) ) )
   app.use( bodyParser.json() )
   app.use( bodyParser.urlencoded( { extended: false } ) )
   app.use( logger( 'dev' ) )
@@ -117,7 +117,7 @@ if ( isDev ) {
     console.error( err )
   }
 } else {
-  const manifest = require( '../docs/manifest.json' )
+  const manifest = require( '../dist/manifest.json' )
 
   Object.keys( dist ).forEach( k => dist[k] = manifest[k] )
   setRoutes( app )
