@@ -10,7 +10,7 @@ const webpack = require( 'webpack' ),
 
 const commonConfig = require( './base.js' )( false )
 
-const DIST_DIR = path.resolve( __dirname, '../dist' ),
+const DIST_DIR = path.resolve( __dirname, '../docs' ),
       LIBS_DIR = path.resolve( __dirname, '../server/libs' )
 
 module.exports = ( env ) => {
