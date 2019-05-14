@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
 
-import { getCommentsByPost } from 'models/actions'
-import { validateComments } from 'models/rules'
+import { getCommentsByPost } from '@models/actions'
+import { validateComments } from '@models/rules'
 
 const CommentItem = ( comment, i ) => {
   const { id, name, email, body } = comment
@@ -50,6 +50,7 @@ const CommentTable = ( { comments } ) => (
 export default class Posts extends React.Component {
 
   componentDidMount () {
+    console.log('componentDidMount')
     const { getCommentsByPost, postId, match } = this.props
 
     if ( postId !== match.params.postId )
@@ -58,6 +59,7 @@ export default class Posts extends React.Component {
 
   render () {
     const { match: { params: { postId } }, comments, isFetching, userId } = this.props
+    console.log('render')
 
     return (
       <div className="comments">

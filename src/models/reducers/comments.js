@@ -1,4 +1,4 @@
-import * as types from 'models/action-types'
+import * as types from '@models/action-types'
 
 const initState = {
   isFetching: false,

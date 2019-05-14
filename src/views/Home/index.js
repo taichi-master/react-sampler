@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
 
-import { setUserId } from 'models/actions'
+import { setUserId } from '@models/actions'
 
 const userIds = [ ...Array( 10 ) ].map( ( x, i ) => i + 1 )
 

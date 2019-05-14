@@ -50,6 +50,31 @@
   ],
   "author": "Kei Sing Wong",
   "license": "UNLICENSED",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "server/**/*.{js,jsx}",
+      "!server/libs/**",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "setupFiles": [
+      "<rootDir>/src/setupTests.js"
+    ], 
+    "transform": {
+      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleNameMapper": {
+      "package.json": "<rootDir>/package.json",
+      "@src(.*)$": "<rootDir>/src/$1",
+      "@models(.*)$": "<rootDir>/src/models/$1",
+      "@views(.*)$": "<rootDir>/src/views/$1",
+      "@components(.*)$": "<rootDir>/src/views/components/$1"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
@@ -65,6 +90,8 @@
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.12.4",
     "html-webpack-plugin": "^3.2.0",

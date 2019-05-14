@@ -57,7 +57,9 @@ module.exports = ( env ) => {
 
     entry: {
       App: './views/components/app',
-      reducers: './models/reducers'
+      sagas: './models/sagas',
+      reducers: './models/reducers',
+      configureStore: './configureStore'
     },
 
     output: {
@@ -85,6 +87,8 @@ module.exports = ( env ) => {
       } )
     ]
   } )
+
+  delete node_config.optimization.splitChunks // needs to remove this from the base settings
 
   return [ web_config, node_config ]
 }

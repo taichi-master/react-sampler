@@ -1,11 +1,11 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { hot, setConfig } from 'react-hot-loader'
-import NavBar from 'components/nav-bar'
-import Home from 'views/Home'
-import Posts from 'views/Posts'
-import Comments from 'views/Comments'
-import NoMatch from 'views/404'
+// import { hot, setConfig } from 'react-hot-loader'
+import NavBar from '@components/nav-bar'
+import Home from '@views/Home'
+import Posts from '@views/Posts'
+import Comments from '@views/Comments'
+import NoMatch from '@views/404'
 
 if ( module.hot )
   setConfig( { logLevel: 'no-errors-please' } )

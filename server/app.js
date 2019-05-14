@@ -22,12 +22,10 @@ const React = require( 'react' ),
       { StaticRouter } = require( 'react-router' ),
 
       App = isDev ? null : require( './libs/App' ).default,
-      // { createStore, applyMiddleware } = require( 'redux' ), // server side redux
-      { createStore } = require( 'redux' ), // server side redux
+      { createStore, applyMiddleware } = require( 'redux' ), // server side redux
       { Provider } = require( 'react-redux' ),
-      // thunkMiddleware = require( 'redux-thunk' ).default,
-      // store = isDev ? null : createStore( require( './libs/reducers' ).default, pkg.cfg.initialState, applyMiddleware( thunkMiddleware ))
-      store = isDev ? null : createStore( require( './libs/reducers' ).default, pkg.cfg.initialState )
+      configureStore = isDev ? null : require( './libs/configureStore' ).default,
+      store = configureStore( pkg.cfg.initialState )
 
 function createPage ( pkg, style, initialState, appHtml ) {
   return `

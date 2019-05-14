@@ -36,14 +36,14 @@ module.exports = isDev => ( {
     alias: {
       'package.json': PACKAGE_JSON,
       'react-dom': isDev ? '@hot-loader/react-dom' : 'react-dom',
-      server: SERVER_DIR,
-      styles: STYLES_DIR,
-      test: TEST_DIR,
-      node_modules: NODE_MODULES_DIR,
-      src: SOURCE_DIR,
-      models: MODELS_DIR,
-      views: VIEWS_DIR,
-      components: COMPONENTS_DIR
+      '@server': SERVER_DIR,
+      '@styles': STYLES_DIR,
+      '@test': TEST_DIR,
+      '@node_modules': NODE_MODULES_DIR,
+      '@src': SOURCE_DIR,
+      '@models': MODELS_DIR,
+      '@views': VIEWS_DIR,
+      '@components': COMPONENTS_DIR
     }
   },
 

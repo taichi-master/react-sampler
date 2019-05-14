@@ -1,4 +1,4 @@
-import * as types from 'models/action-types'
+import * as types from '@models/action-types'
 
 export default ( userId = null, action ) => {
   switch ( action.type ) {

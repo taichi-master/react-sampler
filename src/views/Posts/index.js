@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
-import { getPostsByUser } from 'models/actions'
+import { getPostsByUser } from '@models/actions'
 
 const PostItem = ( post, i ) => {
   const { id, title, body } = post
