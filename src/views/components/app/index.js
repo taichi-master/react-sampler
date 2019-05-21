@@ -7,8 +7,14 @@ import Posts from '@views/Posts'
 import Comments from '@views/Comments'
 import NoMatch from '@views/404'
 
-if ( module.hot )
-  setConfig( { logLevel: 'no-errors-please' } )
+let hot = module => component => component
+
+if ( module.hot ) {
+  const rhl = require( 'react-hot-loader' )
+
+  hot = rhl.hot
+  rhl.setConfig( { logLevel: 'no-errors-please' } )
+}
 
 const App = () => (
   <>
@@ -28,4 +34,5 @@ const App = () => (
   </>
 )
 
-export default module.hot ? hot( module )( App ) : App
+// export default module.hot ? hot( module )( App ) : App
+export default hot( module )( App )

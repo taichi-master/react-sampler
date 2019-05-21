@@ -22,10 +22,10 @@ const React = require( 'react' ),
       { StaticRouter } = require( 'react-router' ),
 
       App = isDev ? null : require( './libs/App' ).default,
-      { createStore, applyMiddleware } = require( 'redux' ), // server side redux
+      // { createStore, applyMiddleware } = require( 'redux' ), // server side redux
       { Provider } = require( 'react-redux' ),
       configureStore = isDev ? null : require( './libs/configureStore' ).default,
-      store = configureStore( pkg.cfg.initialState )
+      store = isDev ? null : configureStore( pkg.cfg.initialState )
 
 function createPage ( pkg, style, initialState, appHtml ) {
   return `

@@ -12,11 +12,9 @@ module.exports = env => webpackMerge( commonConfig, {
 
   devtool: 'inline-source-map',
 
-  // entry: [ '@babel/polyfill', './src/main.js' ],
   entry: {
     main: [
       './main.js',
-      '@babel/polyfill', // required by jest
       'webpack-hot-middleware/client' // required by webpack-hot-middleware
     ]
   },

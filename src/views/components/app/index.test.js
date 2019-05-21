@@ -29,8 +29,8 @@ describe( '<App />', function () {
       </Root>
     )
 
-    console.log( wrapped.html() )
-    expect( wrapped.find( NavBar ).length ).toBe( 2 )
+    // console.log( wrapped.html() )
+    expect( wrapped.find( NavBar ).length ).toBe( 0 )
   } )
 
 } )
